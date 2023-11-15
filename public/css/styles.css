@@ -206,6 +206,42 @@ article div.main-article{
     }
 }
 
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    
+}
+
 .fa-solid.fa-credit-card {
     color: #0044AA;
+    
+}
+
+.fa-solid.fa-gift {
+    color: #0044AA;
+    
+}
+
+.fa-solid.fa-user-shield {
+    color: #0044AA;
+}
+
+.paga {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+.envio {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+.seguridad {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
 }
