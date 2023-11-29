@@ -59,6 +59,14 @@ header ul li{
 header ul li a{
     text-decoration: none;
     color: #000;
+    margin-right: 10px;
+    flex: 1;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
 }
 
 header .form .input{
@@ -208,7 +216,7 @@ article div.main-article{
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 40px;
 }
 
 footer p {
@@ -218,16 +226,17 @@ footer p {
 
 .fa-solid.fa-credit-card {
     color: #0044AA;
-    
+    font-size: 45px;
 }
 
 .fa-solid.fa-gift {
     color: #0044AA;
-    
+    font-size: 45px;
 }
 
 .fa-solid.fa-user-shield {
     color: #0044AA;
+    font-size: 45px;
 }
 
 .paga {
@@ -244,4 +253,49 @@ footer p {
     font-size: 1em;
     text-align: center;
     font-weight: bold;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10%;
+}
+
+form {
+    width: 300px; 
+    margin: auto; 
+}
+
+label {
+    margin-left: 10px;
+}
+
+input, select {
+    margin-bottom: 40px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box; 
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #03264C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #03264C;
+}
+
+.login {
+    display: flex;
+    padding: 5%;
 }
