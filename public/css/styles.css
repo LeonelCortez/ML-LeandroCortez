@@ -9,6 +9,33 @@ body{
     background-color: #ebebeb;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+     
+  }
+  
+  
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  
+nav ul li {
+    margin-right: 20px; 
+  }
+  
+  
+nav a {
+    text-decoration: none;
+    color: white;
+  }
+
 h3{
     font-size: 24px;
 }
@@ -47,6 +74,7 @@ header .form{
     padding: 2px;
     font-size: 11px;
 }
+
 header nav{
     font-size: 12px;
     margin-left: 20px;
@@ -58,15 +86,22 @@ header ul li{
 
 header ul li a{
     text-decoration: none;
-    color: #000;
-    margin-right: 10px;
-    flex: 1;
+    color: #000; 
 }
 
 ul {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     font-size: 2em;
+}
+
+header .form{
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    font-size: 11px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 header .form .input{
@@ -126,8 +161,21 @@ h3,
 }
 
 .description{
-    display: none;
+    position: relative;
     margin-top: 20px;
+    transition:  transform 0.3s;
+    left: 0;
+}
+
+@keyframes description {
+    0%{ transform: scale(1)} 100% {transform: scale(1.2);  
+    }
+}
+
+.description:hover{
+    animation-name: description;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
 section.banner img{
@@ -181,40 +229,116 @@ article div.main-article{
     padding: 15px;
 }
 
-@media (min-width: 361px){
-    main section article .description{
+@media (min-width: 0px) and (max-width:360px){
+    .contfooter{
+      display: flex;
+      flex-direction: column;
+    }
+      div.top-header{
+          flex-wrap: wrap;
+      }
+    nav{
+      display: none;
+    }
+    header .form .input{
+      background-color: #FFF;
+      border: 1px solid #000;
+      outline: none;
+      color: #666;
+      padding: 2px;
+  }
+  
+      main section article .description {
+        display: none;
+      }
+  
+      .fa-solid.fa-truck {
+        right: 240px;
+      }
+  
+      .discount {
         display: block;
+        width: 100%;
+        height: 100px;
+      }
     }
 
-    main section article{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
+    @media (min-width: 361px) {
+        .contfooter{
+          display: flex;
+          flex-direction: column;
+        }
+        nav ul {
+            flex-direction: column; 
+        }
+        main section article .description {
+          display: block;
+        }
+      
+        header div.burger-menu {
+          display: none;
+        }
+      
+        main section article {
+          box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        }
+      
+        main section div.products {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap; 
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+      
+        main section div.products article {
+          width: calc(50% - 10px); 
+          margin-bottom: 10px; 
+        }
+      
+        .price,
+        .discount {
+          width: 100%; 
+        }
+      }
 
-    main section div.products{
+@media (min-width: 769px){
+    nav ul {
+        flex-direction: row; 
+    }
+    main section div.products article {
+      width: 22%;
+    }
+  
+    main section article .description {
+      display: block;
+    }
+  
+    main section article {
+      box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+  
+    main section div.products {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
-    }
+      }
     
-    main section div.products article{
-        width: 45%;
-    }
-
+      main section div.products article {
+        width: 23%; 
+        margin-bottom: 15px; 
+      }
+  
     .price,
-    .discount{
-        width: 50%;
-    }
+    .discount {
+      width: 50%;
 }
-
-@media (min-width: 769px){
-    main section div.products article{
-        width: 22%;
-    }
 }
 
 footer {
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     padding: 40px;
 }
@@ -226,76 +350,42 @@ footer p {
 
 .fa-solid.fa-credit-card {
     color: #0044AA;
-    font-size: 45px;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 .fa-solid.fa-gift {
     color: #0044AA;
-    font-size: 45px;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 .fa-solid.fa-user-shield {
     color: #0044AA;
-    font-size: 45px;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
+.fa-truck {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .fa-truck:hover {
+    transform: rotate(-90deg);
+  }
+
 .paga {
-    font-size: 1em;
+    font-size: 15px;
     text-align: center;
     font-weight: bold;
 }
 .envio {
-    font-size: 1em;
+    font-size: 15px;
     text-align: center;
     font-weight: bold;
 }
 .seguridad {
-    font-size: 1em;
+    font-size: 15px;
     text-align: center;
     font-weight: bold;
-}
-
-.register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10%;
-}
-
-form {
-    width: 300px; 
-    margin: auto; 
-}
-
-label {
-    margin-left: 10px;
-}
-
-input, select {
-    margin-bottom: 40px;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box; 
-    border-radius: 10px;
-}
-
-button {
-    width: 100%;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #03264C;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #03264C;
-}
-
-.login {
-    display: flex;
-    padding: 5%;
 }
